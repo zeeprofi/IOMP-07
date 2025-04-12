@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 800 900"
+   version="1.1"
+   id="svg38"
+   sodipodi:docname="vehicle-damage-assessment-activity-diagram-svg.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview38"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.7035834"
+     inkscape:cx="517.3516"
+     inkscape:cy="335.42576"
+     inkscape:window-width="1712"
+     inkscape:window-height="1069"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg38" />
+  <!-- Title -->
+  <rect
+     x="99.081192"
+     y="9.8931036"
+     width="600"
+     height="60"
+     rx="30"
+     ry="30"
+     fill="#505a6b"
+     id="rect1" />
+  <text
+     x="399.08118"
+     y="38.461441"
+     font-family="Arial"
+     font-size="24px"
+     fill="#ffffff"
+     text-anchor="middle"
+     font-weight="bold"
+     id="text1">Vehicle Damage Assessment System</text>
+  <text
+     x="399.08118"
+     y="63.055485"
+     font-family="Arial"
+     font-size="18px"
+     fill="#ffffff"
+     text-anchor="middle"
+     id="text2">Activity Diagram</text>
+  <!-- Start node -->
+  <circle
+     cx="400"
+     cy="120"
+     r="25"
+     fill="#6CB4EE"
+     stroke="#333"
+     stroke-width="2"
+     id="circle2" />
+  <text
+     x="400"
+     y="125"
+     font-family="Arial"
+     font-size="14"
+     fill="white"
+     text-anchor="middle"
+     id="text3">Start</text>
+  <!-- Login -->
+  <rect
+     x="325"
+     y="170"
+     width="150"
+     height="50"
+     rx="5"
+     ry="5"
+     fill="#6CB4EE"
+     stroke="#333"
+     id="rect3" />
+  <text
+     x="400"
+     y="200"
+     font-family="Arial"
+     font-size="16"
+     fill="white"
+     text-anchor="middle"
+     id="text4">User Logs In</text>
+  <!-- Authentication -->
+  <polygon
+     points="450,250 400,300 350,250 "
+     fill="#ff6b6b"
+     stroke="#333333"
+     id="polygon4"
+     transform="matrix(1.5056623,0,0,1.0839533,-201.34611,-20.798836)" />
+  <text
+     x="400"
+     y="275"
+     font-family="Arial"
+     font-size="14"
+     fill="white"
+     text-anchor="middle"
+     id="text5">Authenticate</text>
+  <!-- Authentication Failed -->
+  <rect
+     x="150"
+     y="270"
+     width="150"
+     height="50"
+     rx="5"
+     ry="5"
+     fill="#6CB4EE"
+     stroke="#333"
+     id="rect5" />
+  <text
+     x="225"
+     y="300"
+     font-family="Arial"
+     font-size="14"
+     fill="white"
+     text-anchor="middle"
+     id="text6">Display Error</text>
+  <!-- Dashboard -->
+  <rect
+     x="325"
+     y="325"
+     width="150"
+     height="50"
+     rx="5"
+     ry="5"
+     fill="#6CB4EE"
+     stroke="#333"
+     id="rect6" />
+  <text
+     x="400"
+     y="355"
+     font-family="Arial"
+     font-size="14"
+     fill="white"
+     text-anchor="middle"
+     id="text7">Display Dashboard</text>
+  <!-- Upload Image -->
+  <rect
+     x="325"
+     y="400"
+     width="150"
+     height="50"
+     rx="5"
+     ry="5"
+     fill="#6CB4EE"
+     stroke="#333"
+     id="rect7" />
+  <text
+     x="400"
+     y="430"
+     font-family="Arial"
+     font-size="14"
+     fill="white"
+     text-anchor="middle"
+     id="text8">Upload Vehicle Image</text>
+  <!-- Store Image -->
+  <rect
+     x="325"
+     y="475"
+     width="150"
+     height="50"
+     rx="5"
+     ry="5"
+     fill="#4BCC64"
+     stroke="#333"
+     id="rect8" />
+  <text
+     x="400"
+     y="505"
+     font-family="Arial"
+     font-size="14"
+     fill="white"
+     text-anchor="middle"
+     id="text9">Store Image</text>
+  <!-- Analyze Image -->
+  <rect
+     x="325"
+     y="550"
+     width="150"
+     height="50"
+     rx="5"
+     ry="5"
+     fill="#E64C66"
+     stroke="#333"
+     id="rect9" />
+  <text
+     x="400"
+     y="580"
+     font-family="Arial"
+     font-size="14"
+     fill="white"
+     text-anchor="middle"
+     id="text10">Analyze Image</text>
+  <!-- AI Processing -->
+  <rect
+     x="325"
+     y="625"
+     width="150"
+     height="50"
+     rx="5"
+     ry="5"
+     fill="#8A2BE2"
+     stroke="#333"
+     id="rect10" />
+  <text
+     x="400"
+     y="655"
+     font-family="Arial"
+     font-size="14"
+     fill="white"
+     text-anchor="middle"
+     id="text11">Process Damage</text>
+  <!-- Generate Report -->
+  <rect
+     x="325"
+     y="700"
+     width="150"
+     height="50"
+     rx="5"
+     ry="5"
+     fill="#FFA500"
+     stroke="#333"
+     id="rect11" />
+  <text
+     x="400"
+     y="730"
+     font-family="Arial"
+     font-size="14"
+     fill="white"
+     text-anchor="middle"
+     id="text12">Generate Report</text>
+  <!-- Export option -->
+  <polygon
+     points="350,780 450,780 400,830"
+     fill="#FF6B6B"
+     stroke="#333"
+     id="polygon12" />
+  <text
+     x="400"
+     y="805"
+     font-family="Arial"
+     font-size="14"
+     fill="white"
+     text-anchor="middle"
+     id="text13">Export?</text>
+  <!-- End node -->
+  <ellipse
+     cx="400"
+     cy="876.78418"
+     fill="#ffa500"
+     stroke="#333333"
+     stroke-width="2"
+     id="circle13"
+     rx="25.063965"
+     ry="21.848135" />
+  <text
+     x="400"
+     y="885"
+     font-family="Arial"
+     font-size="14"
+     fill="white"
+     text-anchor="middle"
+     id="text14">End</text>
+  <!-- Flow arrows -->
+  <line
+     x1="400"
+     y1="145"
+     x2="400"
+     y2="170"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line14" />
+  <line
+     x1="400"
+     y1="220"
+     x2="400"
+     y2="250"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line15" />
+  <line
+     x1="361.94449"
+     y1="275.91882"
+     x2="315.52097"
+     y2="275.91882"
+     stroke="#333333"
+     stroke-width="1.92715"
+     marker-end="url(#arrowhead)"
+     id="line16" />
+  <line
+     x1="224.08119"
+     y1="267.6279"
+     x2="224.08119"
+     y2="195"
+     stroke="#333333"
+     stroke-width="2"
+     id="line17" />
+  <line
+     x1="225"
+     y1="195"
+     x2="325"
+     y2="195"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line18" />
+  <line
+     x1="400"
+     y1="300"
+     x2="400"
+     y2="325"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line19" />
+  <line
+     x1="400"
+     y1="375"
+     x2="400"
+     y2="400"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line20" />
+  <line
+     x1="400"
+     y1="450"
+     x2="400"
+     y2="475"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line21" />
+  <line
+     x1="400"
+     y1="525"
+     x2="400"
+     y2="550"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line22" />
+  <line
+     x1="400"
+     y1="600"
+     x2="400"
+     y2="625"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line23" />
+  <line
+     x1="400"
+     y1="675"
+     x2="400"
+     y2="700"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line24" />
+  <line
+     x1="400"
+     y1="750"
+     x2="400"
+     y2="780"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line25" />
+  <!-- Yes/No labels -->
+  <text
+     x="336.11096"
+     y="290.61975"
+     font-family="Arial"
+     font-size="12px"
+     fill="#333333"
+     text-anchor="middle"
+     id="text25">Failed</text>
+  <text
+     x="438.16238"
+     y="314.50879"
+     font-family="Arial"
+     font-size="12px"
+     fill="#333333"
+     text-anchor="middle"
+     id="text26">Success</text>
+  <!-- Export flows -->
+  <line
+     x1="400"
+     y1="830"
+     x2="400"
+     y2="855"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line26" />
+  <line
+     x1="350"
+     y1="805"
+     x2="300"
+     y2="805"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line27" />
+  <line
+     x1="450"
+     y1="805"
+     x2="500"
+     y2="805"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line28" />
+  <!-- Export options -->
+  <rect
+     x="500"
+     y="780"
+     width="120"
+     height="40"
+     rx="5"
+     ry="5"
+     fill="#FFA500"
+     stroke="#333"
+     id="rect28" />
+  <text
+     x="560"
+     y="805"
+     font-family="Arial"
+     font-size="14"
+     fill="white"
+     text-anchor="middle"
+     id="text28">Export PDF</text>
+  <rect
+     x="180"
+     y="780"
+     width="120"
+     height="40"
+     rx="5"
+     ry="5"
+     fill="#FFA500"
+     stroke="#333"
+     id="rect29" />
+  <text
+     x="240"
+     y="805"
+     font-family="Arial"
+     font-size="14"
+     fill="white"
+     text-anchor="middle"
+     id="text29">Notify User</text>
+  <!-- Connect export options to end -->
+  <line
+     x1="560"
+     y1="820"
+     x2="560"
+     y2="840"
+     stroke="#333"
+     stroke-width="2"
+     id="line29" />
+  <line
+     x1="560"
+     y1="840"
+     x2="425"
+     y2="840"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line30" />
+  <line
+     x1="240"
+     y1="820"
+     x2="240"
+     y2="840"
+     stroke="#333"
+     stroke-width="2"
+     id="line31" />
+  <line
+     x1="240"
+     y1="840"
+     x2="375"
+     y2="840"
+     stroke="#333"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="line32" />
+  <!-- Arrow definition -->
+  <defs
+     id="defs32">
+    <marker
+       id="arrowhead"
+       markerWidth="10"
+       markerHeight="7"
+       refX="0"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon32" />
+    </marker>
+  </defs>
+  <!-- Legend -->
+  <rect
+     x="580.10974"
+     y="350.10977"
+     width="180.10117"
+     height="222.96448"
+     rx="6.0033717"
+     ry="6.1934576"
+     fill="#ffffff"
+     stroke="#333333"
+     id="rect32"
+     style="stroke-width:1.21953" />
+  <text
+     x="655"
+     y="370"
+     font-family="Arial"
+     font-size="16"
+     fill="#333"
+     text-anchor="middle"
+     font-weight="bold"
+     id="text32">Legend</text>
+  <rect
+     x="600"
+     y="390"
+     width="20"
+     height="20"
+     rx="2"
+     ry="2"
+     fill="#6CB4EE"
+     stroke="#333"
+     id="rect33" />
+  <text
+     x="630"
+     y="405"
+     font-family="Arial"
+     font-size="14"
+     fill="#333"
+     text-anchor="start"
+     id="text33">User Action</text>
+  <rect
+     x="600"
+     y="420"
+     width="20"
+     height="20"
+     rx="2"
+     ry="2"
+     fill="#4BCC64"
+     stroke="#333"
+     id="rect34" />
+  <text
+     x="630"
+     y="435"
+     font-family="Arial"
+     font-size="14"
+     fill="#333"
+     text-anchor="start"
+     id="text34">Database</text>
+  <rect
+     x="600"
+     y="450"
+     width="20"
+     height="20"
+     rx="2"
+     ry="2"
+     fill="#E64C66"
+     stroke="#333"
+     id="rect35" />
+  <text
+     x="630"
+     y="465"
+     font-family="Arial"
+     font-size="14"
+     fill="#333"
+     text-anchor="start"
+     id="text35">Damage Detector</text>
+  <rect
+     x="600"
+     y="480"
+     width="20"
+     height="20"
+     rx="2"
+     ry="2"
+     fill="#8A2BE2"
+     stroke="#333"
+     id="rect36" />
+  <text
+     x="630"
+     y="495"
+     font-family="Arial"
+     font-size="14"
+     fill="#333"
+     text-anchor="start"
+     id="text36">AI Engine</text>
+  <rect
+     x="600"
+     y="510"
+     width="20"
+     height="20"
+     rx="2"
+     ry="2"
+     fill="#FFA500"
+     stroke="#333"
+     id="rect37" />
+  <text
+     x="630"
+     y="525"
+     font-family="Arial"
+     font-size="14"
+     fill="#333"
+     text-anchor="start"
+     id="text37">Report System</text>
+  <polygon
+     points="600,540 620,540 610,560"
+     fill="#FF6B6B"
+     stroke="#333"
+     id="polygon37" />
+  <text
+     x="630"
+     y="555"
+     font-family="Arial"
+     font-size="14"
+     fill="#333"
+     text-anchor="start"
+     id="text38">Decision</text>
+</svg>

@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="systemGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f8ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e6f0ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="userGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4f1f9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#89cff0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="adminGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d5f5e3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#82e0aa;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="insuranceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fdebd0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8c471;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="repairGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ebdef0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d2b4de;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="systemUseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#eaecee;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d5d8dc;stop-opacity:1" />
+    </linearGradient>
+    <filter id="drop-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="760" fill="white"/>
+  
+  <!-- System boundary -->
+  <rect x="200" y="80" width="600" height="600" rx="15" ry="15" fill="url(#systemGradient)" stroke="#4682B4" stroke-width="3" filter="url(#drop-shadow)"/>
+  <rect x="200" y="80" width="600" height="40" rx="15" ry="15" fill="#4682B4" stroke="#4682B4" stroke-width="0"/>
+  <text x="500" y="107" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold" fill="white">AutoInspect AI System</text>
+  
+  <!-- User use cases -->
+  <ellipse cx="320" cy="180" rx="90" ry="30" fill="url(#userGradient)" stroke="#2E86C1" stroke-width="2" filter="url(#drop-shadow)"/>
+  <text x="320" y="185" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Upload Vehicle Images</text>
+  
+  <ellipse cx="320" cy="260" rx="90" ry="30" fill="url(#userGradient)" stroke="#2E86C1" stroke-width="2" filter="url(#drop-shadow)"/>
+  <text x="320" y="265" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Request Inspection</text>
+  
+  <ellipse cx="320" cy="340" rx="90" ry="30" fill="url(#userGradient)" stroke="#2E86C1" stroke-width="2" filter="url(#drop-shadow)"/>
+  <text x="320" y="345" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">View Results</text>
+  
+  <ellipse cx="320" cy="420" rx="90" ry="30" fill="url(#userGradient)" stroke="#2E86C1" stroke-width="2" filter="url(#drop-shadow)"/>
+  <text x="320" y="425" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Download Report</text>
+  
+  <!-- Admin use cases -->
+  <ellipse cx="680" cy="180" rx="90" ry="30" fill="url(#adminGradient)" stroke="#27AE60" stroke-width="2" filter="url(#drop-shadow)"/>
+  <text x="680" y="185" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Manage System</text>
+  
+  <ellipse cx="680" cy="260" rx="90" ry="30" fill="url(#adminGradient)" stroke="#27AE60" stroke-width="2" filter="url(#drop-shadow)"/>
+  <text x="680" y="265" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Update AI Models</text>
+  
+  <!-- Insurance use cases -->
+  <ellipse cx="680" cy="340" rx="90" ry="30" fill="url(#insuranceGradient)" stroke="#F39C12" stroke-width="2" filter="url(#drop-shadow)"/>
+  <text x="680" y="345" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Review Assessment</text>
+  
+  <ellipse cx="680" cy="420" rx="90" ry="30" fill="url(#insuranceGradient)" stroke="#F39C12" stroke-width="2" filter="url(#drop-shadow)"/>
+  <text x="680" y="425" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Approve Estimate</text>
+  
+  <!-- Repair Shop use cases -->
+  <ellipse cx="500" cy="500" rx="90" ry="30" fill="url(#repairGradient)" stroke="#8E44AD" stroke-width="2" filter="url(#drop-shadow)"/>
+  <text x="500" y="505" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Confirm Repairs</text>
+  
+  <!-- System use cases -->
+  <ellipse cx="500" cy="600" rx="90" ry="30" fill="url(#systemUseGradient)" stroke="#566573" stroke-width="2" filter="url(#drop-shadow)"/>
+  <text x="500" y="605" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Process Images</text>
+  
+  <!-- Actors -->
+  <!-- User -->
+  <circle cx="70" cy="260" r="15" fill="#3498DB" stroke="#2E86C1" stroke-width="2"/>
+  <line x1="70" y1="275" x2="70" y2="315" stroke="#2E86C1" stroke-width="2"/>
+  <line x1="40" y1="295" x2="100" y2="295" stroke="#2E86C1" stroke-width="2"/>
+  <line x1="70" y1="315" x2="40" y2="355" stroke="#2E86C1" stroke-width="2"/>
+  <line x1="70" y1="315" x2="100" y2="355" stroke="#2E86C1" stroke-width="2"/>
+  <rect x="45" y="360" width="50" height="25" rx="5" ry="5" fill="#3498DB" stroke="#2E86C1" stroke-width="1"/>
+  <text x="70" y="378" font-family="Arial" font-size="14" text-anchor="middle" fill="white" font-weight="bold">User</text>
+  
+  <!-- Admin -->
+  <circle cx="930" cy="220" r="15" fill="#2ECC71" stroke="#27AE60" stroke-width="2"/>
+  <line x1="930" y1="235" x2="930" y2="275" stroke="#27AE60" stroke-width="2"/>
+  <line x1="900" y1="255" x2="960" y2="255" stroke="#27AE60" stroke-width="2"/>
+  <line x1="930" y1="275" x2="900" y2="315" stroke="#27AE60" stroke-width="2"/>
+  <line x1="930" y1="275" x2="960" y2="315" stroke="#27AE60" stroke-width="2"/>
+  <rect x="900" y="320" width="60" height="25" rx="5" ry="5" fill="#2ECC71" stroke="#27AE60" stroke-width="1"/>
+  <text x="930" y="338" font-family="Arial" font-size="14" text-anchor="middle" fill="white" font-weight="bold">Admin</text>
+  
+  <!-- Insurance -->
+  <circle cx="930" cy="380" r="15" fill="#F5B041" stroke="#F39C12" stroke-width="2"/>
+  <line x1="930" y1="395" x2="930" y2="435" stroke="#F39C12" stroke-width="2"/>
+  <line x1="900" y1="415" x2="960" y2="415" stroke="#F39C12" stroke-width="2"/>
+  <line x1="930" y1="435" x2="900" y2="475" stroke="#F39C12" stroke-width="2"/>
+  <line x1="930" y1="435" x2="960" y2="475" stroke="#F39C12" stroke-width="2"/>
+  <rect x="890" y="480" width="80" height="25" rx="5" ry="5" fill="#F5B041" stroke="#F39C12" stroke-width="1"/>
+  <text x="930" y="498" font-family="Arial" font-size="14" text-anchor="middle" fill="white" font-weight="bold">Insurance</text>
+  
+  <!-- Repair Shop -->
+  <circle cx="70" cy="500" r="15" fill="#9B59B6" stroke="#8E44AD" stroke-width="2"/>
+  <line x1="70" y1="515" x2="70" y2="555" stroke="#8E44AD" stroke-width="2"/>
+  <line x1="40" y1="535" x2="100" y2="535" stroke="#8E44AD" stroke-width="2"/>
+  <line x1="70" y1="555" x2="40" y2="595" stroke="#8E44AD" stroke-width="2"/>
+  <line x1="70" y1="555" x2="100" y2="595" stroke="#8E44AD" stroke-width="2"/>
+  <rect x="30" y="600" width="80" height="25" rx="5" ry="5" fill="#9B59B6" stroke="#8E44AD" stroke-width="1"/>
+  <text x="70" y="618" font-family="Arial" font-size="14" text-anchor="middle" fill="white" font-weight="bold">Repair Shop</text>
+  
+  <!-- Associations -->
+  <!-- User associations -->
+  <line x1="90" y1="240" x2="230" y2="180" stroke="#3498DB" stroke-width="2"/>
+  <line x1="90" y1="260" x2="230" y2="260" stroke="#3498DB" stroke-width="2"/>
+  <line x1="90" y1="280" x2="230" y2="340" stroke="#3498DB" stroke-width="2"/>
+  <line x1="90" y1="300" x2="230" y2="420" stroke="#3498DB" stroke-width="2"/>
+  
+  <!-- Admin associations -->
+  <line x1="910" y1="220" x2="770" y2="180" stroke="#2ECC71" stroke-width="2"/>
+  <line x1="910" y1="240" x2="770" y2="260" stroke="#2ECC71" stroke-width="2"/>
+  
+  <!-- Insurance associations -->
+  <line x1="910" y1="380" x2="770" y2="340" stroke="#F5B041" stroke-width="2"/>
+  <line x1="910" y1="400" x2="770" y2="420" stroke="#F5B041" stroke-width="2"/>
+  
+  <!-- Repair Shop associations -->
+  <line x1="90" y1="500" x2="410" y2="500" stroke="#9B59B6" stroke-width="2"/>
+  
+  <!-- Include relationships -->
+  <line x1="320" y1="290" x2="480" y2="570" stroke="#566573" stroke-width="2" stroke-dasharray="5,5"/>
+  <polygon points="472,561 485,570 472,579" fill="white" stroke="#566573" stroke-width="1.5"/>
+  <rect x="360" y="415" width="80" height="22" rx="11" ry="11" fill="white" stroke="#566573" stroke-width="1" transform="rotate(55, 390, 425)"/>
+  <text x="400" y="425" font-family="Arial" font-size="12" transform="rotate(55, 390, 425)" text-anchor="middle" fill="#566573">«include»</text>
+  
+  <!-- Extend relationships -->
+  <line x1="320" y1="370" x2="320" y2="390" stroke="#566573" stroke-width="2" stroke-dasharray="5,5"/>
+  <polygon points="312,381 320,390 328,381" fill="white" stroke="#566573" stroke-width="1.5"/>
+  <rect x="220" y="369" width="70" height="22" rx="11" ry="11" fill="white" stroke="#566573" stroke-width="1"/>
+  <text x="255" y="385" font-family="Arial" font-size="12" text-anchor="middle" fill="#566573">«extend»</text>
+  
+  <!-- Title -->
+  <rect x="200" y="30" width="600" height="30" rx="15" ry="15" fill="#4682B4" stroke="none"/>
+  <text x="500" y="50" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="white">AutoInspect AI - Vehicle Damage Assessment System</text>
+
+  <!-- Legend -->
+  <rect x="750" y="600" width="220" height="130" rx="10" ry="10" fill="white" stroke="#4682B4" stroke-width="2"/>
+  <text x="860" y="625" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Legend</text>
+  
+  <rect x="760" y="635" width="15" height="15" fill="url(#userGradient)" stroke="#2E86C1" stroke-width="1"/>
+  <text x="785" y="648" font-family="Arial" font-size="12" text-anchor="start">User Functions</text>
+  
+  <rect x="760" y="655" width="15" height="15" fill="url(#adminGradient)" stroke="#27AE60" stroke-width="1"/>
+  <text x="785" y="668" font-family="Arial" font-size="12" text-anchor="start">Admin Functions</text>
+  
+  <rect x="760" y="675" width="15" height="15" fill="url(#insuranceGradient)" stroke="#F39C12" stroke-width="1"/>
+  <text x="785" y="688" font-family="Arial" font-size="12" text-anchor="start">Insurance Functions</text>
+  
+  <rect x="760" y="695" width="15" height="15" fill="url(#repairGradient)" stroke="#8E44AD" stroke-width="1"/>
+  <text x="785" y="708" font-family="Arial" font-size="12" text-anchor="start">Repair Shop Functions</text>
+</svg>

@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Inspect AI: Vehicle Damage Assessment System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #0f172a;
+            --accent-color: #4ade80;
+            --light-bg: #f8fafc;
+            --text-color: #334155;
+            --white: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.9);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 80px 0 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/api/placeholder/1200/600') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin: 30px 0 15px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 15px;
+        }
+        
+        .team-member {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .slide {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+        
+        .slide.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .feature-list, .req-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .feature-list li, .req-list li {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-list li:hover, .req-list li:hover {
+            transform: translateX(5px);
+        }
+        
+        .feature-list li:before {
+            content: "\f00c";
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .req-list li:before {
+            content: "\f111";
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 5px;
+            font-size: 10px;
+            color: var(--primary-color);
+            top: 8px;
+        }
+        
+        .architecture-img {
+            width: 100%;
+            max-width: 800px;
+            margin: 30px auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .architecture-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .uml-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+        }
+        
+        .uml-diagram {
+            width: 45%;
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .uml-diagram:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .uml-diagram img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .uml-diagram img:hover {
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(37, 99, 235, 0.2) 0%, rgba(15, 23, 42, 0.2) 100%);
+            z-index: 0;
+        }
+        
+        footer .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .nav-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background-color: var(--primary-color);
+            transform: scale(1.3);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            z-index: 9999;
+            width: 0%;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 99;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        section {
+            scroll-margin-top: 50px;
+        }
+        
+        .slide h3 {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .slide h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.5s ease;
+        }
+        
+        .slide:hover h3::after {
+            width: 100%;
+        }
+        
+        .car-animation {
+            position: absolute;
+            bottom: 20px;
+            left: -100px;
+            font-size: 30px;
+            animation: driveCar 15s linear infinite;
+        }
+        
+        @keyframes driveCar {
+            0% {
+                left: -100px;
+                transform: translateX(0);
+            }
+            100% {
+                left: calc(100% + 100px);
+                transform: translateX(0);
+            }
+        }
+        
+        .highlight {
+            background: linear-gradient(to right, transparent 50%, rgba(74, 222, 128, 0.2) 50%);
+            background-size: 200% 100%;
+            background-position: 0 0;
+            display: inline;
+            transition: 0.5s ease-out;
+            padding: 2px 5px;
+        }
+        
+        .slide:hover .highlight {
+            background-position: -100% 0;
+        }
+        
+        @media (max-width: 768px) {
+            .uml-diagram {
+                width: 100%;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .nav-dots {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <div class="nav-dots">
+        <div class="nav-dot" data-section="intro"></div>
+        <div class="nav-dot" data-section="literature"></div>
+        <div class="nav-dot" data-section="proposed"></div>
+        <div class="nav-dot" data-section="requirements"></div>
+        <div class="nav-dot" data-section="architecture"></div>
+        <div class="nav-dot" data-section="design"></div>
+        <div class="nav-dot" data-section="conclusion"></div>
+    </div>
+    
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <header class="animate__animated animate__fadeIn">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown animate__delay-1s">Auto Inspect AI: AI-Powered Vehicle Damage Inspection</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Automating Car Damage Detection & Severity Estimation</p>
+            <h2 class="animate__animated animate__fadeIn animate__delay-1s"><b>BATCH NUMBER : 007</b></h2>
+            
+            <div class="team animate__animated animate__fadeInUp animate__delay-1s">
+                <div class="team-member">Mohammed Zeeshan (225U1A6680)</div>
+                <div class="team-member">Rakesh Reddy (225U1A66B8)</div>
+                <div class="team-member">Shaik Mudassir (225U1A668A9)</div>
+                <div class="team-member">Satya Krishna (225U1A6685)</div>
+            </div>
+
+            <div class="car-animation">
+                <i class="fas fa-car"></i>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section id="intro">
+            <h2 class="animate__animated animate__fadeIn">1. Introduction</h2>
+            
+            <div class="slide">
+                <h3>Problem Statement</h3>
+                <br><img src="istockphoto-1070111414-612x612.jpg" alt="Introduction Image" style="width:100%; height:auto; border:2px dashed gray; padding:10px;" />
+                <ul class="req-list">
+                    <li>Current Issue: <span class="highlight">Manual vehicle damage assessment</span> is time-consuming, costly, and inconsistent.</li>
+                    <li>Need for AI: Automating the process can improve efficiency, accuracy, and cost estimation.</li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h3>Objective</h3>
+                <lottie-player 
+                    src="AI.json" 
+                    background="transparent" 
+                    speed="1" 
+                    style="width: 300px; height: 300px; margin: 2px auto;" 
+                    loop 
+                    autoplay>
+    </lottie-player>
+                <ul class="req-list">
+                    <li>Develop an <span class="highlight">AI-powered web platform</span> for real-time vehicle damage detection and severity estimation.</li>
+                    <li>Use computer vision and deep learning models for accurate damage analysis.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="literature">
+            <h2 class="animate__animated animate__fadeIn">2. Literature Survey</h2>
+            
+            <div class="slide">
+                <h3>Related Work (Base Paper Insights)</h3>
+                <ul class="req-list">
+                    <li>Traditional Approaches: Manual inspection, insurance adjusters, and expert assessment.</li>
+                    <li>AI-Based Approaches: <span class="highlight">YOLO, Mask R-CNN, XGBoost</span> for damage estimation.</li>
+                    <li>Gaps in Existing Work:
+                        <ul class="req-list">
+                            <li>Lack of real-world datasets for in-the-wild damage detection.</li>
+                            <li>No severity estimation models integrated with cost prediction.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="slide">
+                <h3>Real-Time Motivation</h3>
+                <br><img src="Motor Insurance (2).png" alt="Introduction Image" style="width:55%; height:auto; border:2px dashed gray; padding:15px; margin:10px;" />
+                <img src="5053366.webp" alt="Introduction Image" style="width:40%; height:auto; border:2px dashed gray; padding:10px; margin:10px;" />
+                <div style="display: flex; justify-content: center;">
+                    <img src="istockphoto-1499465013-612x612.jpg" alt="Introduction Image" style="width:50%; height:auto; border:2px dashed gray; padding:15px; margin-top:20px;" />
+                  </div>
+                <ul class="req-list">
+                    <li><span class="highlight">Insurance Industry:</span> Faster claim processing.</li>
+                    <li><span class="highlight">Car Rentals:</span> Automated inspection before & after rentals.</li>
+                    <li><span class="highlight">Service Centres:</span> AI-assisted damage reporting for repair estimation.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="proposed">
+            <h2 class="animate__animated animate__fadeIn">3. Proposed System</h2>
+            
+            <div class="slide">
+                <h3>Key Features</h3>
+                
+                <ul class="feature-list">
+                    <li><span class="highlight">Vehicle Detection (YOLOv4)</span> -- Identifies and crops the car from images.</li>
+                    <li><span class="highlight">Car Angle Classification (ResNet-18)</span> -- Determines the car's orientation.</li>
+                    <li><span class="highlight">Damage & Parts Segmentation (Mask R-CNN)</span> -- Identifies and localizes damages.</li>
+                    <li><span class="highlight">Feature Fusion (IoU-based scoring)</span> -- Combines image-based and structured data.</li>
+                    <li><span class="highlight">Damage Severity Estimation (LightGBM)</span> -- Predicts damage level and cost.</li>
+                    <li><span class="highlight">Web Dashboard (Django, React.js)</span> -- User-friendly interface for damage reports.</li>
+                </ul>
+                <div style="display: flex; justify-content: center;">
+                 <img src="Screenshot 2025-04-10 at 20.54.39.png" alt="Introduction Image" style="width:80%; height:20%;; border:2px dashed gray; padding:10px;" />
+                </div>
+            </div>
+        </section>
+        
+        <section id="requirements">
+            <h2 class="animate__animated animate__fadeIn">4. Requirements</h2>
+            
+            <div class="slide">
+                <h3>Hardware & Software Requirements</h3>
+                
+                <h4>Hardware:</h4>
+
+<div style="display: flex; align-items: center; gap: 20px;">
+  <lottie-player 
+      src="Animation - 1744306234954.json" 
+      background="transparent" 
+      speed="1" 
+      style="width: 350px; height: 350px;" 
+      loop 
+      autoplay>
+  </lottie-player>
+
+  <ul class="req-list" style="margin: 0;">
+      <li><span class="highlight">GPU (NVIDIA RTX 3060 / A100)</span> -- For training and inference.</li>
+      <li><span class="highlight">Cloud Storage (AWS S3, Google Cloud)</span> -- For image data storage.</li>
+      <li><span class="highlight">Server </span> -- Running Django & AI models.</li>
+  </ul>
+</div>
+                
+<h4>Software:</h4>
+
+<div style="display: flex; align-items: center; gap: 20px;">
+  <lottie-player 
+      src="Animation - 1744306317454.json" 
+      background="transparent" 
+      speed="1" 
+      style="width: 350px; height: 350px;" 
+      loop 
+      autoplay>
+  </lottie-player>
+
+  <ul class="req-list" style="margin: 0;">
+      <li>Deep Learning: TensorFlow, PyTorch.</li>
+      <li>Computer Vision: OpenCV, Numpy.</li>
+      <li>Backend: Flask.</li>
+      <li>Frontend: React.js, HTML, CSS.</li>
+      <li>Database: PostgreSQL, Firebase.</li>
+  </ul>
+</div>
+            
+            <div class="slide">
+                <h3>Functional & Non-Functional Requirements</h3>
+                
+                <!-- Include Lottie Player CDN in your HTML <head> or before closing </body> -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<div>
+    <h4>Functional Requirements</h4>
+    <ul class="req-list">
+        <li>Users can upload car images for analysis.</li>
+        <li>The system should detect damaged areas and classify severity.</li>
+        <li>The system should provide a repair cost estimate.</li>
+    </ul>
+
+    <!-- Lottie Animation for Functional Requirements -->
+     <ul><b>Step1:</b></ul>
+    <lottie-player 
+        src="uploadimages.json" 
+        background="transparent" 
+        speed="1" 
+        style="width: 300px; height: 300px; margin: 4px auto;" 
+        loop 
+        autoplay>
+    </lottie-player>
+    <ul><b>Step2:</b></ul>
+    <lottie-player 
+        src="system.json" 
+        background="transparent" 
+        speed="1" 
+        style="width: 300px; height: 300px; margin: 4px auto;" 
+        loop 
+        autoplay>
+    </lottie-player>
+    <ul><b>Step3:</b></ul>
+    <lottie-player 
+        src="repaircost.json" 
+        background="transparent" 
+        speed="1" 
+        style="width: 300px; height: 300px; margin: 4px auto;" 
+        loop 
+        autoplay>
+    </lottie-player>
+
+    <h4>Non-Functional Requirements</h4>
+    <ul class="req-list">
+        <li><span class="highlight">Accuracy: AI models should have at least 85% accuracy.</span></li>
+        <li><span class="highlight">Scalability: System should handle multiple image uploads at once.</span></li>
+        <li><span class="highlight">Security: Secure user data & insurance claims.</span></li>
+    </ul>
+
+    <!-- Lottie Animation for Non-Functional Requirements -->
+    <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+        <lottie-player 
+            src="accuracy.json" 
+            background="transparent" 
+            speed="1" 
+            style="width: 300px; height: 300px;" 
+            loop 
+            autoplay>
+        </lottie-player>
+      
+        <lottie-player 
+            src="loader.json" 
+            background="transparent" 
+            speed="1" 
+            style="width: 300px; height: 300px;" 
+            loop 
+            autoplay>
+        </lottie-player>
+      
+        <lottie-player 
+            src="security.json" 
+            background="transparent" 
+            speed="1" 
+            style="width: 300px; height: 300px;" 
+            loop 
+            autoplay>
+        </lottie-player>
+      </div>
+</div>
+            
+            <div class="slide">
+                <h3>Other Requirements</h3>
+                <ul class="req-list">
+                    <li>Integration with insurance companies & car rental services.</li>
+                    <li>APIs for third-party applications (e.g., mobile apps).</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="architecture">
+            <h2 class="animate__animated animate__fadeIn">5. Architecture</h2>
+            
+            <div class="slide">
+                <h3>System Architecture Overview</h3>
+                <ul class="req-list">
+                    <li>Input: User uploads vehicle images.</li>
+                    <li>Processing:
+                        <ul class="req-list">
+                            <li>YOLOv4 detects the car.</li>
+                            <li>Mask R-CNN segments damage & parts.</li>
+                            <li>Feature fusion combines image & structured data.</li>
+                            <li>XGBoost predicts severity & cost.</li>
+                        </ul>
+                    </li>
+                    <li>Output: Generates damage report & cost estimate.</li>
+                </ul>
+                <img src="vehicle-damage-assessment-architecture.svg" alt="System Architecture Diagram" class="architecture-img">
+            </div>
+        </section>
+        
+        <section id="design">
+            <h2 class="animate__animated animate__fadeIn">6. Design (UML Diagrams)</h2>
+            
+            <div class="slide">
+                <div class="uml-container">
+                    <div class="uml-diagram">
+                        <h3>Class Diagram</h3>
+                        <p>Shows interaction between User, AI Engine, Damage Detector, and Database.</p>
+                        <img src="vehicle-damage-assessment-class-diagram.svg" alt="Class Diagram">
+                    </div>
+                    
+                    <div class="uml-diagram">
+                        <h3>Use Case Diagram</h3>
+                        <p>Actors: User, Insurance Agent, Repair Shop.</p>
+                        <p>Use Cases: Image Upload, Damage Detection, Cost Estimation, Report Generation.</p>
+                        <img src="autoinspect-uml-use-case-clean.svg" alt="Use Case Diagram">
+                    </div>
+                    <div class="uml-diagram">
+                        <h3>Sequence Diagram</h3>
+                        <p>Shows the how data flows through the system.</p>
+                        <img src="autoinspect-sequence-diagram.svg" alt="Sequence Diagram">
+                    </div>
+                    <div class="uml-diagram">
+                        <h3>Activity Diagram</h3>
+                        <p>Shows the steps involved in the damage assessment process.</p>
+                        <img src="vehicle-damage-assessment-activity-diagram-svg.svg" alt="Activity Diagram">
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </section>
+        
+        <section id="conclusion">
+            <h2 class="animate__animated animate__fadeIn">7. Conclusion & Future Scope</h2>
+        
+            <div class="slide">
+                <h3>Conclusion</h3>
+                <ul class="req-list">
+                    <li>Auto Inspect AI automates vehicle damage detection with high accuracy.</li>
+                    <li>Reduces manual inspection time and improves cost estimation.</li>
+                </ul>
+        
+                <h3>Future Scope</h3>
+                <ul class="req-list">
+                    <li><span class="highlight">VR-based inspection models.</span></li>
+                    <li><span class="highlight">Integration with mobile apps.</span></li>
+                    <li><span class="highlight">Multi-language support.</span></li>
+                </ul>
+        
+                <!-- ✅ Image Placeholder -->
+                <div style="text-align: center; margin-top: 20px;">
+                    <img src="筆ありがとうございますイラスト画像とPSDフリー素材透過の無料ダウンロード - Pngtree.jpeg" alt="Future Scope Illustration" 
+                         style="width: 100%; height: auto; border: 2px dashed gray; padding: 10px;" />
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p class="animate__animated animate__fadeIn">Auto Inspect AI: Vehicle Damage Assessment System</p>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">© 2025 Project Team</p>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal animations on scroll
+        function checkSlides() {
+            const slides = document.querySelectorAll('.slide');
+            const triggerBottom = window.innerHeight * 0.8;
+            
+            slides.forEach(slide => {
+                const slideTop = slide.getBoundingClientRect().top;
+                if (slideTop < triggerBottom) {
+                    slide.classList.add('show');
+                }
+            });
+        }
+        
+        // Progress bar
+        function updateProgressBar() {
+            const windowHeight = window.innerHeight;
+            const fullHeight = document.body.offsetHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / fullHeight) * 100;
+            document.querySelector('.progress-bar').style.width = `${progress}%`;
+        }
+        
+        // Back to top button
+        function handleBackToTop() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        }
+        
+        // Navigation dots
+        function updateNavDots() {
+            const sections = document.querySelectorAll('section');
+            const navDots = document.querySelectorAll('.nav-dot');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navDots.forEach(dot => {
+                dot.classList.remove('active');
+                if (dot.getAttribute('data-section') === current) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+        
+        // Initialize
+        window.addEventListener('scroll', () => {
+            checkSlides();
+            updateProgressBar();
+            handleBackToTop();
+            updateNavDots();
+        });
+        
+        window.addEventListener('load', () => {
+            checkSlides();
+            updateProgressBar();
+            
+            // Initialize Animate.css elements
+            document.querySelectorAll('.animate__animated').forEach(el => {
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate__fadeIn');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                observer.observe(el);
+            });
+            
+            // Set up navigation dots click events
+            document.querySelectorAll('.nav-dot').forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const section = document.getElementById(dot.getAttribute('data-section'));
+                    window.scrollTo({
+                        top: section.offsetTop - 50,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Set up back to top button
+            document.querySelector('.back-to-top').addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add interactive highlights for features
+        document.querySelectorAll('.feature-list li').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateX(10px)';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0)';
+            });
+        });
+        
+        // Add animated typing effect for the title
+        let typingEffectApplied = false;
+        
+        function checkHeaderVisibility() {
+            const header = document.querySelector('header');
+            const headerRect = header.getBoundingClientRect();
+            
+            if (headerRect.top >= 0 && 
+                headerRect.bottom <= window.innerHeight && 
+                !typingEffectApplied) {
+                // Apply typing effect animation
+                typingEffectApplied = true;
+            }
+        }
+        
+        window.addEventListener('scroll', checkHeaderVisibility);
+        checkHeaderVisibility();
+    </script>
+</body>
+</html>
