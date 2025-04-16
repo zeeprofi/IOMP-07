@@ -19,14 +19,14 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="1.0034823"
-     inkscape:cx="436.48004"
-     inkscape:cy="283.01445"
+     inkscape:cx="436.48005"
+     inkscape:cy="283.01446"
      inkscape:window-width="1712"
      inkscape:window-height="1069"
      inkscape:window-x="0"
      inkscape:window-y="38"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg46" />
+     inkscape:current-layer="webInterface" />
   <!-- Background gradient -->
   <defs
      id="defs17">
@@ -315,11 +315,13 @@
          x="230"
          y="90"
          font-family="Arial"
-         font-size="12"
+         font-size="12px"
          text-anchor="middle"
          font-weight="bold"
-         fill="white"
-         id="text22">Web Interface</text>
+         fill="#ffffff"
+         id="text22"><tspan
+   style="fill:#000000"
+   id="tspan1">1.</tspan>Web Interface</text>
       <line
          x1="230"
          y1="110"
@@ -349,11 +351,13 @@
          x="390"
          y="90"
          font-family="Arial"
-         font-size="12"
+         font-size="12px"
          text-anchor="middle"
          font-weight="bold"
-         fill="white"
-         id="text23">AI Engine</text>
+         fill="#ffffff"
+         id="text23"><tspan
+   style="fill:#000000"
+   id="tspan2">2.</tspan> AI Engine</text>
       <line
          x1="390"
          y1="110"
@@ -383,11 +387,13 @@
          x="550"
          y="90"
          font-family="Arial"
-         font-size="12"
+         font-size="12px"
          text-anchor="middle"
          font-weight="bold"
-         fill="white"
-         id="text24">Damage Detector</text>
+         fill="#ffffff"
+         id="text24"><tspan
+   style="fill:#000000"
+   id="tspan3">3.</tspan> Damage Detector</text>
       <line
          x1="550"
          y1="110"
@@ -417,11 +423,13 @@
          x="710"
          y="90"
          font-family="Arial"
-         font-size="12"
+         font-size="12px"
          text-anchor="middle"
          font-weight="bold"
-         fill="white"
-         id="text25">Database</text>
+         fill="#ffffff"
+         id="text25"><tspan
+   style="fill:#000000"
+   id="tspan4">4.</tspan> Database</text>
       <line
          x1="710"
          y1="110"
